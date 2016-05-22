@@ -1,0 +1,2 @@
+# docs
+FlexSearch Official Documentation
