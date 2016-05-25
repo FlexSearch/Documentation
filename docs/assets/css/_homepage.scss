@@ -1,0 +1,109 @@
+mt-lg{
+    margin-top: 32px;
+}
+mb-lg{
+    margin-bottom: 32px;
+}
+
+section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    h1:before {
+        content: '';
+        display: block;
+        height: 1rem;
+        margin-bottom: 1rem;
+        width: 4rem;
+    }
+    p.lead {
+        margin-top: 0;
+    }
+    
+    h4 {
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-top: 1.5rem;
+    }
+    p {
+        font-weight: 300;   
+    }
+    .feature {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+}
+
+.icon {
+    margin: 1rem;
+}
+.section-primary {
+    @extend section;
+    background: $brand-primary;
+    h1{
+        color: $gray-lightest;
+    }
+    h1.title{
+        font-weight:100;
+        padding-top: 4rem;
+    }
+    h1.title:before{
+        background: $brand-primary;
+    }
+    h1:before{
+        background: $gray-lightest;
+    }
+    h4{
+        color: $gray-lightest;
+    }
+    
+    p{
+        color: $gray-light;
+    }
+    li{
+        color: $gray-lighter;
+        font-size: 1.2rem;
+        font-weight: 200;
+    }
+}
+
+.section-dark {
+    @extend section;
+    background: $bg-dark;
+    h4, h1 {
+        color: $gray-lightest;
+    }
+    h1:before{
+        background: $gray-lightest;
+    }
+    h2{
+       font-weight: 100;
+        color: $gray-lightest;  
+    }
+    p {
+        color: $gray-light;
+    }
+    svg{
+        fill: $gray-light;
+    }
+}
+
+.section-light {
+    @extend section;
+    background: #fff;
+    h1:before{
+        background: $headings-color;
+    }
+}
+
+.section-main {
+    @extend section;
+    padding-top: 2.5rem;
+    background: #fff;
+    p, li, ul, ol {
+        font-weight: 400;   
+    }
+    h1:before{
+        background: #fff;
+    }
+}

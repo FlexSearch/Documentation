@@ -1,0 +1,617 @@
+@import "_bootstrap/bootstrap";
+@import "github";
+@import "homepage";
+@import "blockgrid";
+@import "json-formatter";
+@import "perfect-scrollbar.min";
+
+body  {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+   }
+
+
+p {
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  word-break: break-all;
+  /* Non standard for webkit */
+  word-break: break-word;
+
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+//
+// Headings
+//
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: $headings-margin-bottom;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h1; }
+h3, .h3 { font-size: $font-size-h2; }
+h4, .h4 { font-size: $font-size-h3; }
+h5, .h5 { font-size: $font-size-h4; }
+h6, .h6 { font-size: $font-size-h5; }
+
+
+.lead {
+  font-size: $lead-font-size;
+  font-weight: $lead-font-weight;
+}
+
+/// Based on https://www.smashingmagazine.com/2015/01/designing-for-print-with-css/
+.hidden {
+  display: none !important;
+}
+
+@media all {
+	.page-break, .print-only, .print-only-section-header	{ display: none; }
+}
+
+
+@media print {
+  	.page-break	{ display: block; page-break-before: always; }
+    .print-only-section-header {
+      display: block;
+    }
+    .print-only	{ display: block;
+        border: 1px solid $gray-light;
+        margin: 1em;
+        padding: 1em;
+       }
+    .print-only::before {
+      content: "The content of the section is optimized for web viewing. Please access the content from the website.";
+    }
+    * { background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        /// Remove this if you want better border colors on the tables etc
+        border-color: #000 !important;
+        text-shadow: none !important;}
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+    body
+    {
+      /* this affects the margin on the content before sending to printer */
+      margin: 0px;
+    }
+    h1 {
+      page-break-before: always;
+    }
+    h1, h2, h3 {
+      text-transform: capitalize !important;
+    }
+    h1, h2, h3, h4, h5 {
+      page-break-after: never;
+      letter-spacing: normal !important;
+    }
+    .spaced-title{
+      letter-spacing: normal !important;
+    }
+    table, figure, pre, .search-result, .callout {
+      page-break-inside: avoid;
+    }
+}
+
+/// https://www.w3.org/TR/css3-page/
+@page {
+    size: A4;
+    margin:.6in .6in .6in .6in;
+    mso-header-margin:.6in;
+    mso-footer-margin:.6in;
+    mso-paper-source:0;
+}
+
+/*
+ * Bootstrap Docs (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
+ * Licensed under the Creative Commons Attribution 3.0 Unported License. For
+ * details, see https://creativecommons.org/licenses/by/3.0/.
+
+ * Callouts
+ *
+ * Not quite alerts, but custom and helpful notes for folks reading the docs.
+ * Requires a base and modifier class.
+ */
+
+/* Common styles for all types */
+.callout {
+  p {
+    margin-top: 0;
+  }
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+.callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.callout p:last-child {
+  margin-bottom: 0;
+}
+.callout code {
+  border-radius: 3px;
+}
+
+/* Tighten up space between multiple callouts */
+.callout + .callout {
+  margin-top: -5px;
+}
+
+/* Variations */
+.callout-danger {
+  border-left-color: #ce4844;
+}
+.callout-danger h4 {
+  color: #ce4844;
+}
+.callout-warning {
+  border-left-color: #aa6708;
+}
+.callout-warning h4 {
+  color: #aa6708;
+}
+.callout-info {
+  border-left-color: #1b809e;
+}
+.callout-info h4 {
+  color: #1b809e;
+}
+
+.callout-success {
+    border-left-color: #3c763d;
+}
+
+.callout-success h4 {
+    color: #3c763d;
+}
+
+/*
+ * Side navigation
+ */
+ .menu-link{
+   margin-left: 1rem;
+ }
+#menu{
+  /*border-right: .1rem solid $bg-primary;*/
+  position: fixed;
+  left: -15.625em; /*left or right and the width of your navigation panel*/
+  width: 15.625em; /*should match the above value*/
+  z-index: 5000;
+  overflow-y: auto;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+}
+.menu {
+  line-height: 1.5rem;
+  .navbar-brand {
+    // padding: 1rem 1rem 1.5rem 1rem;
+    margin: 0px;
+    float: none;
+
+    img {
+      margin: 20px;
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li{
+    padding: .2rem;
+  }
+
+  li.heading {
+    /*border-bottom: 1px solid $gray-light;*/
+    border-top: 1px solid $gray-light;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    padding: 0.5rem 0 .5rem 0.5rem;
+
+  }
+
+  li.nav-item {
+    padding-left: 1rem;
+    /*border-bottom: 1px dotted $gray-light;*/
+  }
+
+  li.nav-item:hover {
+    background-color: rgba(158,158,158,0.2);
+  }
+
+  li.active {
+    border-left: .5rem solid $bg-primary;
+  }
+}
+/*
+ * Footer
+ */
+footer {
+  margin-top: 64px;
+  background: $brand-primary;
+  color: $gray-lightest;
+  border: none;
+  a:hover {
+      color: $gray-lightest;
+    }
+  a {
+    color: $gray-light;
+  }
+}
+
+/*
+ * Navbar
+ */
+.nav-bar {
+    font-size: .9rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.navbar-nav .nav-link {
+    display: block;
+    padding-top: .425rem;
+    padding-bottom: .425rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: $headings-font-family;
+}
+
+.navbar-nav  li.active {
+    border-bottom: .3rem solid $bg-primary;
+}
+
+/*
+ * Table of content
+ */
+ .toc {
+   background: $bg-dark;
+   padding: 10px 50px 10px 50px;
+   margin-bottom: 26px;
+   color: #fff;
+
+    p.toc-headings {
+      font-size: 16px;
+      font-weight: 500;
+      border-bottom: 1px solid #fff;
+    }
+
+    p, a  {
+      font-weight: 300;
+      color: #fff;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+ }
+/*
+ * Search result box
+ */
+
+ .search-result {
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.12);
+    border: 1px solid $gray-lighter;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+/*
+ * General font style overrides
+ * Generic helpers
+ */
+.uppercase {
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.spaced-title {
+  letter-spacing: 5px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.pad-top-64 {
+  padding-top: 64px;
+}
+
+.pad-bottom-64 {
+  padding-bottom: 64px;
+}
+
+.pad-64 {
+  padding-bottom: 64px;
+  padding-top: 64px;
+}
+
+.margin-top-64 {
+  margin-top: 64px;
+}
+
+.margin-bottom-64 {
+  margin-bottom: 64px;
+}
+
+.bg-dark {
+  background-color: $bg-dark;
+  color: $gray-lighter;
+}
+
+.white {  color: white; }
+.large { font-size: 4rem; }
+.weight-100 {font-weight: 100;}
+
+/* Table CSS */
+table {
+    border: 1px solid #ddd;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+tbody>tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody>tr>td, tbody>tr>th, tfoot>tr>td, tfoot>tr>th, thead>tr>td, thead>tr>th {
+    border: 1px solid #ddd;
+    padding: 5px;
+
+}
+
+/* CODE CSS */
+code, pre {
+    background: #f8f8f8; ;
+	border: solid 1px #e1e4e5;
+	white-space: pre-wrap;
+	max-width: 100%;
+	font-size: 100%;
+	padding: 0 2px;
+	margin: 0 3px;
+    font-family: Consolas, "Andale Mono WT","Andale Mono","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;
+	overflow-x: auto;
+    word-break: keep-all; /* webkit */
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    white-space: pre\9; /* IE7+ */
+}
+
+pre {
+   padding: 15px;
+   font-size: 100%;
+   margin-bottom: 24px;
+   margin-top: 24px;
+   white-space: pre-wrap;       /* css-3 */
+}
+
+pre > code {
+   border: none;
+}
+
+/* Search box */
+.searchbox {
+  background: $brand-primary;
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+#searchbox {
+    background: #f5f5f5;
+    border: none;
+    width: 100%;
+    min-width: 100%;
+    height: 45px;
+    padding-left: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+/* Awesomcomplete CSS */
+[hidden] { display: none; }
+
+.visually-hidden {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+}
+
+div.awesomplete > input {
+	display: block;
+}
+
+div.awesomplete > ul {
+  color: $gray-lighter;
+  font-size: 1rem;
+	position: absolute;
+	left: 0;
+	z-index: 1;
+	min-width: 100%;
+	box-sizing: border-box;
+	list-style: none;
+	padding: 0;
+	border-radius: .3em;
+	margin: .2em 0 0;
+	background: $bg-dark;
+	border: 1px solid rgba(0,0,0,.3);
+	box-shadow: .05em .2em .6em rgba(0,0,0,.2);
+	text-shadow: none;
+}
+
+div.awesomplete > ul[hidden],
+div.awesomplete > ul:empty {
+	display: none;
+}
+
+div.awesomplete > ul[hidden],
+div.awesomplete > ul:empty {
+  opacity: 0;
+  transform: scale(0);
+  display: block;
+  transition-timing-function: ease;
+}
+
+
+	/* Pointer */
+	div.awesomplete > ul:before {
+		content: "";
+		position: absolute;
+		top: -.43em;
+		left: 1em;
+		width: 0; height: 0;
+		padding: .4em;
+		background: $bg-dark;
+		border: inherit;
+		border-right: 0;
+		border-bottom: 0;
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+	}
+
+	div.awesomplete > ul > li {
+		position: relative;
+		padding: .2em .5em;
+		cursor: pointer;
+	}
+
+	div.awesomplete > ul > li:hover {
+		background: rgba(200, 200, 200, .1);
+		color: $gray-lightest;
+	}
+
+		div.awesomplete mark {
+			background: hsl(65, 100%, 50%);
+		}
+
+		div.awesomplete li:hover mark {
+			background: hsl(68, 100%, 41%);
+    }
+
+/*
+Go to top
+*/
+#back-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 9999;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 30px;
+    background: #f5f5f5;
+    color: #444;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+}
+#back-to-top:hover {
+    background: #e9ebec;
+}
+#back-to-top.show {
+    opacity: 1;
+}
+
+/*
+Browser Windows
+http://cloudcannon.com/deconstructions/2014/11/21/flat-css-browser-wrapper.html
+*/
+.fake-browser-ui img {
+  background-color: transparent;
+  border: 1px solid #dadada;
+  border-top: 0;
+}
+.fake-browser-ui .frame {
+    margin-top: 50px;
+    display: block;
+    height: 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #eee;
+    border: 1px solid #dadada;
+}
+
+.fake-browser-ui span {
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    background-color: #eee;
+    border: 1px solid #dadada;
+    float: left;
+    margin: 5px 0 0 10px;
+}
+
+/* FlexSearch snippet highlighting */
+.flexsearch {
+    .hljs-variable{
+      color: #008080;
+    }
+    .hljs-constant{
+      color: #000080;
+    }
+    .hljs-command {
+      color: #458;
+      font-weight: bold;
+    }
+}
+
+/* SVg diagram related */
+rect, polygon {
+      fill: rgb(248, 248, 248) !important;
+}
+
+svg {
+  text {
+    font-family: Roboto, Consolas, Courier;
+  }
+}
+
+/* Terminal examples */
+.terminal-example {
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.12);
+    border: 1px solid $gray-lighter;
+    padding: 10px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+
+    code.source {
+    display: none;
+  }
+
+    .response h4 {
+      border-bottom: $gray-lighter;
+      border-bottom-style: solid;
+      border-bottom-width: thin;
+      padding-bottom: 5px;
+    }
+}

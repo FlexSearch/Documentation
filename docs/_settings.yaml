@@ -1,0 +1,80 @@
+SiteName: FlexSearch
+SiteUrl: https://flexsearch.net
+RepositoryName: FlexSearch
+RepositoryUrl: https://github.com/FlexSearch
+RepositoryHost: Github
+RepositoryEditMeLink: https://github.com/FlexSearch/Documentation/edit/master
+PageLayout: page
+PagePermalink: /docs/{area}/{id}/index.html    
+BuildOutput: ./build
+HtmlFileExtension: html
+EnableSearch: true
+GenerateSiteMap: true
+GenerateSinglePageDoc: true
+
+Areas:
+  - Title: Home
+    Id: home
+  - Title: Quick Start
+    Id: quick-start
+  - Title: Server
+    Id: server
+  - Title: Index
+    Id: index
+  - Title: Search
+    Id: search
+  - Title: REST API
+    Id: rest
+  - Title: SDK
+    Id: sdk
+  - Title: Extending
+    Id: extending
+  - Title: Connectors
+    Id: connectors
+  - Title: Guides
+    Id: guides
+
+BuildConfiguration:
+  release:
+     GenerateSiteMap: true
+     EnableSearch: true
+     MinifyJS: true
+     ConcatJS: true
+     MinifyHTML: true
+     MinifyCSS: true
+     CompileSCSS: true
+     Serve: false
+     LiveReload: false
+     Watch: false
+     CleanOutputDir: true
+     
+  prod:
+     GenerateSiteMap: true
+     EnableSearch: true
+     MinifyJS: true
+     ConcatJS: true
+     MinifyHTML: true
+     MinifyCSS: true
+     CompileSCSS: true
+     Serve: true
+     LiveReload: false
+     Watch: false
+     CleanOutputDir: true
+      
+  dev:
+     GenerateSiteMap: false
+     EnableSearch: true
+     MinifyJS: true
+     ConcatJS: true
+     MinifyHTML: false
+     MinifyCSS: false
+     CompileSCSS: true
+     Serve: true
+     LiveReload: true
+     Watch: true
+     CleanOutputDir: false
+     
+MainCssFile: assets/css/_site.scss
+MainJsFile: assets/js/_site.js
+
+  

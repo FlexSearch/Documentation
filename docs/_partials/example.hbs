@@ -1,0 +1,28 @@
+<div class="print-only"></div>
+<div class="content terminal-example no-print">
+    <div class="request">
+{{#md}}
+```http
+{{HttpRequest.Method.Method}} {{HttpRequest.RequestUri}} HTTP/1.1
+```
+{{/md}}
+        {{#if RequestBody}}
+        <code class="source">{{json RequestBody}}</code>
+        <div class="json"></div>
+        <br />
+        {{/if}}
+    </div>
+    <div class="response">
+{{#md}}
+#### Response
+```http
+HTTP/{{HttpResponse.Version.Major}}.{{HttpResponse.Version.Minor}} {{HttpResponse.StatusCode}}
+{{#HttpResponse.Content.Headers}}
+{{Key}} : {{Value.[0]}}
+{{/HttpResponse.Content.Headers}}
+```
+{{/md}}        
+        <code class="source">{{json ResponseBody}}</code>
+        <div class="json"></div>
+    </div>
+</div>

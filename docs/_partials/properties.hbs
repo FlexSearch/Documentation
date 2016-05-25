@@ -1,0 +1,45 @@
+<table>
+    <thead>
+        <tr>
+            <th colspan="3">Model Definition</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td colspan="3"><strong>Required Properties</strong></td></tr>
+        {{#required}}
+          <tr>
+            <td colspan="3"><code>{{this}}</code></td>
+          </tr>
+        {{/required}}
+        <tr>
+            <td><strong>All Properties</strong></td>
+            <td><strong>Type</strong></td>
+            <td><strong>Default Value</strong></td>
+        </tr>
+        {{#each properties}}
+        <tr>
+           <td><code>{{@key}}</code></td>
+           <td>{{type}} 
+               {{#if enum}}
+                (Enum: 
+                {{#enum}}<code>{{this}}</code> {{/enum}})
+               {{/if}}
+               {{#if items}}
+               of <code>string</code>
+               {{/if}}
+               {{#if additionalProperties}}
+               of <code>map&lt;string, string&gt;</code>
+               {{/if}}
+               {{#if $ref}}
+               Complex Object, Please refer: <a href="/docs/rest/api-reference">API Reference</a>
+               {{/if}}
+          </td>
+            <td>{{default}}</td>
+        </tr>
+
+        {{/each}}
+        <tr>
+        <td colspan="3">For more indepth description of properties please refer to the <a href="/docs/rest/api-reference">API reference</a>.</td>
+        </tr>
+    </tbody>
+</table>

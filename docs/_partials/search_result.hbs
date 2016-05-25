@@ -1,0 +1,40 @@
+<div class="search-result">
+{{#md}}
+##### {{{Description}}}
+
+```flexsearch
+{{{Query.queryString}}}
+```
+{{/md}}
+<div class="print-only">
+</div>
+<table class="table no-print">
+    <thead>
+        <tr>
+            <th width="15%">countryname</th>
+            <th width="45%">agriproducts</th>
+            <th width="25%">governmenttype</th>
+            <th width="15%">population</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <td colspan="2">*For brevity only up to 5 results are displayed here.</td>
+            <td>Total available</td>
+            <td><strong>{{Result.totalAvailable}}</strong></td>
+        </tr>
+    </tfoot>
+    <tbody style="height:200px">
+        {{#each_upto Result.documents 5}}
+                <tr>
+                    <td>{{fields.countryname}}</td>
+                    <td>{{fields.agriproducts}}</td>
+                    <td>{{fields.governmenttype}}</td>
+                    <td>{{fields.population}}</td>
+                </tr>
+            
+        {{/each_upto}}
+    </tbody>
+</table>
+</div>
+

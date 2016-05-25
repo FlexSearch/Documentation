@@ -1,0 +1,50 @@
+{{> head }}
+<body>
+    {{> navbar }}
+<style>
+    h1, h4 {
+        letter-spacing: 0 !important;
+    }
+    
+</style>
+    <section class="section-primary no-print searchbox">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <input id="searchbox" class="awesomplete" type="text" name="q" placeholder="Search the documentation">
+                    <div id="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-main">
+        <div class="container">
+            <div class="row">
+                <main class="col-sm-12 col-md-8 offset-md-2">
+                    <div class="no-print">
+                    <p class="large" style="@media print{padding-top:400px} color:black;">FlexSearch Complete Documentation Manual<p>
+                    <div class="page-break"></div>
+                        <h4>Table of content</h4>
+                        <ul class="menu" style="list-style:none">
+                            {{#areas}}
+                                {{#compare area.id '!==' 'home'}}
+                                <li class="heading">{{area.title}}</li>
+                                <li>
+                                    <ul class="menu">
+                                    {{#pages}}      
+                                    <li class="nav-item {{#compare title ../../page.title}}active{{/compare}}"><a class="nav-link" href="#{{id}}">{{title}}</a></li>
+                                    {{/pages}}
+                                    </ul>
+                                </li>
+                                {{/compare}}
+                            {{/areas}}
+                        </ul>
+                    </div>
+                    {{{content}}}
+                </main>
+            </div>
+        </div>
+    </section>
+{{> footer }}
+</body>
+</html>

@@ -1,0 +1,46 @@
+<nav class="navbar navbar-light navbar-fixed-top nav-bar no-print">
+    <a href="/" class="navbar-brand">
+        <span>
+            <img height="20" src="\assets\img\site\logo-icon.svg">&nbsp;<img height="20" src="\assets\img\site\logo-text.svg">
+        </span>
+    </a>
+    <ul class="nav navbar-nav">
+        <li class="nav-item"><a class="nav-link menu-link" href="#menu">&#9776; Documentation</a></li>
+    </ul>
+    <ul class="nav navbar-nav pull-xs-right hidden-sm-down">
+        {{#data.links.navbarrightlinks}}
+        <li class="nav-item{{#compare id '===' ../page.selectednavbaritem}} active{{/compare}}">
+            <a class="nav-link" href="{{link}}">{{title}}</a></li>
+        {{/data.links.navbarrightlinks}}
+    </ul>
+</nav>
+
+<nav id="menu" class="bg-faded no-print scrollable">
+    <div class="menu">
+        <a href="/" class="navbar-brand">
+            <img height="20" src="\assets\img\site\logo-text.svg">
+        </a>
+        <ul>
+            {{#data.links.navbarrightlinks}}
+            <li class="nav-item">
+                <a class="nav-link" href="{{link}}">{{title}}</a>
+            </li>
+            {{/data.links.navbarrightlinks}}
+            <li class="nav-item">
+                <a class="nav-link" href="/docs/flexsearch-manual.pdf">Download Documentation</a>
+            </li>
+            {{#areas}}
+                {{#compare area.id '!==' 'home'}}
+                <li class="heading">{{area.title}}</li>
+                <li>
+                    <ul class="menu">
+                    {{#pages}}
+                    <li class="nav-item {{#compare title ../../page.title}}active{{/compare}}"><a class="nav-link" href="{{permalink}}">{{title}}</a></li>
+                    {{/pages}}
+                    </ul>
+                </li>
+                {{/compare}}
+            {{/areas}}
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,19 @@
+<footer id="footer" class="no-print">
+    <nav class="navbar">
+        <ul class="nav navbar-nav">
+            {{#data.links.footerlinks}}
+            <li class="nav-item{{#compare id '===' ../page.selectednavbaritem}} active{{/compare}}">
+                <a class="footer-link nav-link" href="{{link}}">{{title}}</a></li> 
+            {{/data.links.footerlinks}}
+        </ul>
+        <ul class="nav navbar-nav pull-xs-right">
+            {{#data.links.navbarrightlinks}}
+            <li class="nav-item{{#compare id '===' ../page.selectednavbaritem}} active{{/compare}}">
+                <a class="footer-link nav-link" href="{{link}}">{{title}}</a></li> 
+            {{/data.links.navbarrightlinks}}
+        </ul>
+    </nav>
+</footer>
+<a href="#" class="no-print" id="back-to-top" title="Back to top">&uarr;</a>
+<!--<script src="//cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>-->
+<script src="/assets/js/site.js"></script>

@@ -1,0 +1,1 @@
+wkhtmltopdf --print-media-type --enable-internal-links -T 25mm -B 25mm -L 25mm -R 25mm --zoom 1.3 --footer-center [page] --footer-spacing 10 --footer-line --header-spacing 10 --header-line --header-center [section] --outline-depth 3 toc --xsl-style-sheet toc.xsl localhost:8080/docs/all/index.html D:\Github\Catalogue\src\Catalogue\bin\Debug\build\docs\flexsearch-manual.pdf

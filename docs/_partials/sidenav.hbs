@@ -1,0 +1,27 @@
+<nav class="docs-sidebar hidden-md-down">
+    <ul class="nav docs-sidenav" id="side-nav">
+    {{#areas}}
+        {{#compare area.id '!==' 'home'}}
+        <li class="heading">{{area.title}}</li>
+        <ul class="nav">
+        {{#pages}}      
+        <li {{#compare title ../../page.title}}class="active"{{/compare}}><a href="{{permalink}}">{{title}}</a></li>
+        {{/pages}}
+        </ul>
+        {{/compare}}
+    {{/areas}}        
+    </ul>
+</nav>
+<nav class="hidden-md-up">
+	<select id="small-nav-dropdown">
+		{{#areas}}
+        {{#compare area.id '!==' 'home'}}
+        <optgroup label="{{area.title}}">
+        {{#pages}}      
+        <option value="{{permalink}}" {{#compare title ../../page.title}}selected{{/compare}}>{{title}}</option>
+        {{/pages}}
+        {{/compare}}
+        {{/areas}}
+        </optgroup>
+	</select>
+ </nav>
