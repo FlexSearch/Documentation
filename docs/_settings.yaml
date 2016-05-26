@@ -34,45 +34,54 @@ Areas:
   - Title: Guides
     Id: guides
 
-BuildConfiguration:
-  release:
-     GenerateSiteMap: true
-     EnableSearch: true
-     MinifyJS: true
-     ConcatJS: true
-     MinifyHTML: true
-     MinifyCSS: true
-     CompileSCSS: true
-     Serve: false
-     LiveReload: false
-     Watch: false
-     CleanOutputDir: true
-     
-  prod:
-     GenerateSiteMap: true
-     EnableSearch: true
-     MinifyJS: true
-     ConcatJS: true
-     MinifyHTML: true
-     MinifyCSS: true
-     CompileSCSS: true
-     Serve: true
-     LiveReload: false
-     Watch: false
-     CleanOutputDir: true
-      
-  dev:
-     GenerateSiteMap: false
-     EnableSearch: true
-     MinifyJS: true
-     ConcatJS: true
-     MinifyHTML: false
-     MinifyCSS: false
-     CompileSCSS: true
-     Serve: true
-     LiveReload: true
-     Watch: true
-     CleanOutputDir: false
+BuildConfiguration: 
+  dev: 
+    CleanOutputDir: false
+    CompileSCSS: true
+    ConcatJS: true
+    EnableSearch: true
+    ExecutePostBuildScript: false
+    ForceExit: false
+    GenerateSiteMap: false
+    GenerateSinglePageDoc: false
+    LiveReload: true
+    MinifyCSS: false
+    MinifyHTML: false
+    MinifyJS: true
+    Serve: true
+    Watch: true
+
+  prod: 
+    CleanOutputDir: true
+    CompileSCSS: true
+    ConcatJS: true
+    EnableSearch: true
+    ExecutePostBuildScript: true
+    ForceExit: false
+    GenerateSiteMap: true
+    GenerateSinglePageDoc: true
+    LiveReload: false
+    MinifyCSS: true
+    MinifyHTML: true
+    MinifyJS: true
+    Serve: true
+    Watch: false
+
+  release: 
+    CleanOutputDir: true
+    CompileSCSS: true
+    ConcatJS: true
+    EnableSearch: true
+    ExecutePostBuildScript: true
+    ForceExit: true
+    GenerateSiteMap: true
+    GenerateSinglePageDoc: true
+    LiveReload: false
+    MinifyCSS: true
+    MinifyHTML: true
+    MinifyJS: true
+    Serve: true
+    Watch: false
      
 MainCssFile: assets/css/_site.scss
 MainJsFile: assets/js/_site.js

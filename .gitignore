@@ -3,3 +3,4 @@ _includes/api.html
 docs/_data/dynamic/
 docs/_includes/api.html
 build/
+.firebaserc

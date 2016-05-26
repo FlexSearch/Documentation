@@ -1,10 +1,9 @@
 {
-  "firebase": "flexsearch",
-  "public": "build",
-  "cleanUrls": false,
-  "ignore": [
-    "firebase.json",
-    "**/.*",
-    "**/node_modules/**"
-  ]
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "build",
+	"cleanUrls": false
+  }
 }
