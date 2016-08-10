@@ -5,7 +5,7 @@
     <div class="container text-center">
         <div class="row">
             <h1 class="title large">Flexible &amp; Fast .net<br/>Search&nbsp;Engine</h1>
-            
+
             <a class="btn btn-secondary btn-lg" style="margin-top:2rem" href="//github.com/flexsearch/flexsearch/releases"><i class="ti ti-download"> </i>Download FlexSearch</a>
         </div>
         <div class="row">
@@ -42,6 +42,31 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
+                <h1>Index Management UI</h1>
+                <p class="lead">Create, edit and quickly populate indices.</p>
+            </div>
+            <div class="col-md-8">
+                <p>In <b>under 1 minute</b> using the <b>Index Management UI</b> you can:</p>
+                <ul>
+                    <li>Create an index,</li>
+                    <li>configure it,</li>
+                    <li>populate it,</li>
+                    <li>and search it as well !!</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <video loop autoplay height="auto" width="100%">
+              <source src="assets/img/adminui.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+<section class="section-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
                 <h1>Customizability</h1>
                 <p class="lead">Customize all aspects of the system</p>
             </div>
@@ -62,7 +87,7 @@
                                 S15.963,51,11,51z M51,24c-6.065,0-11-4.935-11-11S44.935,2,51,2s11,4.935,11,11S57.065,24,51,24z"/>'
             heading='Connectors'
             description='Import data using out of box connectors like CSV, SQL etc. Easily write new ones with the plugin model.'}}
-            
+
             {{> feature icon='<path d="M41,37.586l-4.15-4.15L44.409,26H48c5.019,0,11-2.342,11-13.5v-1.573l-8.778,4.115l-3.038-3.164L51.024,3H49.5
                                 C38.342,3,36,9.011,36,14v3.59l-7.442,7.554L16.414,13l3.198-3.198L7.845,2.741L4.741,5.845l7.061,11.768L15,14.414l12.154,12.154
                                 L2.788,51.298l-0.178,0.18l-1.992,6.831l2.968,2.793l6.857-1.696l24.98-24.567L39.586,39l-3,3L57,62.414L64.414,55L44,34.586
@@ -71,7 +96,7 @@
                                 L9.432,57.595z M57,59.586L39.414,42L44,37.414L61.586,55L57,59.586z"/>'
             heading='SDKs'
             description='Out of box SDKs are available for many popular languages including C#, JavaScript and Typescript. Many more are on way.'}}
-            
+
             {{> feature icon=' <path d="M53.144,20.271L59.414,14L50,4.586l-6.27,6.27L39,9.279V0H25v9.279l-4.73,1.576L14,4.586L4.586,14l6.27,6.271L9.279,25H0
                                 v14h9.279l1.577,4.729L4.586,50L14,59.414l6.27-6.27L25,54.721V64h14v-9.279l4.73-1.576l6.27,6.27L59.414,50l-6.27-6.271L54.721,39
                                 H64V25h-9.279L53.144,20.271z M62,37h-8.721l-2.423,7.271L56.586,50L50,56.586l-5.73-5.73L37,53.279V62H27v-8.721l-7.27-2.424
@@ -81,26 +106,26 @@
                                 S34.757,37,32,37z"/>'
             heading='Plugin model'
             description='Extendible plugin model which allows adding of new HTTP endpoints, connectors or completely new functionality. Background duplicate match is a totally standalone application build using the connector model.'}}
-            
+
             {{> feature icon='<path d="M8,14.586V64h48V0H22.586L8,14.586z M22,3.414V14H11.414L22,3.414z M54,62H10V16h14V2h30V62z"/>'
             heading='REST API'
             description='All aspects of the system can be configured using easy to understand and consistent REST API.'}}
-            
+
             {{> feature icon='<path d="M0,58h64V6H0V58z M2,56V16h60v40H2z M62,8v6H2V8H62z"/>
                         <rect x="6" y="10" width="4" height="2"/>
                         <rect x="14" y="10" width="4" height="2"/>
                         <rect x="22" y="10" width="4" height="2"/>'
             heading='Swagger Support'
             description='FlexSearch completely embraces Swagger where all the REST endpoints and DTOs are written in Swagger first. This allows easy integration with existing Swagger ecosystem.'}}
-            
+
             {{> feature icon='<path d="M39.157,0.462l-23,36L17,38h12.695l-6.661,24.74l1.776,0.846l26-36L50,26H37.166l3.823-24.848L39.157,0.462z
 		 M35.012,26.848L36,28h12.044l-21.66,29.991l5.582-20.731L31,36H18.826L38.291,5.532L35.012,26.848z"/>'
             heading='Binary support for better throughput'
             description='REST is good but can be slow at times. Go super-fast with our binary end points.'}}
         </div>
     </div>
-</section>    
-<section class="section-light">
+</section>
+<section class="section-dark">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -111,8 +136,8 @@
         <div class="block-grid-sm-1 block-grid-md-2">
             {{> feature icon='<path d="M21,42c5.431,0,10.37-2.089,14.102-5.484L39.586,41l-3,3L57,64.414L64.414,57L44,36.586l-3,3l-4.484-4.484
 		C39.91,31.37,42,26.431,42,21C42,9.42,32.579,0,21,0S0,9.42,0,21S9.421,42,21,42z M61.586,57L57,61.586L39.414,44L44,39.414
-		L61.586,57z M21,2c10.477,0,19,8.523,19,19s-8.523,19-19,19S2,31.477,2,21S10.523,2,21,2z"/>' 
-                    heading= 'Powerful Search DSL' 
+		L61.586,57z M21,2c10.477,0,19,8.523,19,19s-8.523,19-19,19S2,31.477,2,21S10.523,2,21,2z"/>'
+                    heading= 'Powerful Search DSL'
                     description='Exploit Lucene without being a search expert. Use advance search features with ease using our intuitive search DSL. Search functions are easy to understand and comes with switches to modify the behaviour. For example: AllOf, AnyOf etc.'}}
 
             {{> feature icon='<path d="M33,10V6h-2v4H10.586L0,20.586V54h31v4h2v-4h31V20.586L53.414,10H33z M54,13.414L60.586,20H54V13.414z M10,13.414V20H3.414
@@ -136,7 +161,7 @@
 		C35.475,38.016,36,36.57,36,35c0-3.86-3.141-7-7-7S22,31.14,22,35z M29,30c2.757,0,5,2.243,5,5s-2.243,5-5,5s-5-2.243-5-5
 		S26.243,30,29,30z"/>'
             heading='Define custom search functions and switches'
-            description='Due to the extensible nature it is easy to define new search functions to cater to specific cases. For example one may easily add `InLastXMinutes` function to date time field type. Such functions gives semantic meaning to a search query.'}} 
+            description='Due to the extensible nature it is easy to define new search functions to cater to specific cases. For example one may easily add `InLastXMinutes` function to date time field type. Such functions gives semantic meaning to a search query.'}}
 
             {{> feature icon='<path d="M55.978,33.05C55.458,21.91,45.828,13,34.066,13c-10.404,0-19.648,6.823-21.871,16h-0.862C5.084,29,0,33.935,0,40
 		c0,6.168,4.832,11,11,11h44c5.047,0,9-3.953,9-9C64,37.284,60.548,33.523,55.978,33.05z M55,49H11c-5.047,0-9-3.953-9-9
@@ -145,13 +170,13 @@
 	<path d="M32.2,37.6L34,40h-2c-3.942,0-7-4.3-7-8h-2c0,4.721,3.849,10,9,10h2l-1.8,2.4l1.7,1.2l3.1-4v-1.2l-3.1-4L32.2,37.6z"/>
 	<path d="M34,22h-2l1.8-2.4l-1.7-1.2l-3.1,4v1.2l3.1,4l1.65-1.2L32,24h2c3.942,0,7,4.3,7,8h2C43,27.279,39.151,22,34,22z"/>'
             heading='Predefined Queries to simplify integration'
-            description='FlexSearch allows central management of search queries which means easier integration as the calling system does need updating when the query is tweaked.'}}   
+            description='FlexSearch allows central management of search queries which means easier integration as the calling system does need updating when the query is tweaked.'}}
 
             {{> feature icon='<path d="M8,64h48V0H22.586L8,14.586V64z M54,62H10V16h14V2h30V62z M11.414,14L22,3.414V14H11.414z"/>
 	<path d="M22.079,40.507l-1.354,6.768l6.768-1.354L43.414,30L38,24.586L22.079,40.507z M26.507,44.079l-3.232,0.646l0.646-3.232
 		L35,30.414L37.586,33L26.507,44.079z M39,31.586L36.414,29L38,27.414L40.586,30L39,31.586z"/>'
             heading='F# based scripting support'
-            description='F# is a terse and easy to use programming language. FlexSearch provides powerful scripting capabilities to fine tune query or data at various stages in the search and index pipeline. F# is a compiled language so no need to worry about script performance.'}} 
+            description='F# is a terse and easy to use programming language. FlexSearch provides powerful scripting capabilities to fine tune query or data at various stages in the search and index pipeline. F# is a compiled language so no need to worry about script performance.'}}
 
             {{> feature icon='<path d="M56,0H22.586L8,14.586V64h48V0z M22,3.414V14H11.414L22,3.414z M54,62H10V16h14V2h30V62z"/>
 	<path d="M22,31c-0.44,0-0.829,0.289-0.957,0.71c-0.128,0.421,0.036,0.877,0.402,1.122l5.382,3.588l-1.909,6.29
@@ -162,13 +187,13 @@
 		l-3.252,2.168c-0.359,0.24-0.524,0.683-0.409,1.099l1.216,4.392l-3.693-2.488c-0.334-0.224-0.77-0.228-1.105-0.008l-3.822,2.497
 		l1.326-4.369c0.128-0.422-0.035-0.878-0.402-1.123L25.303,33h3.91C29.639,33,30.018,32.731,30.157,32.329z"/>'
             heading='Control relevance through scripting'
-            description='Search relevance can be tricky to get right. Due to the supported scripting model it is easy to filter out results or boost search terms or apply custom logic etc.'}} 
+            description='Search relevance can be tricky to get right. Due to the supported scripting model it is easy to filter out results or boost search terms or apply custom logic etc.'}}
 
 
-           
+
         </div>
     </div>
-</section> 
+</section>
 <section class="section-primary">
     <div class="container">
         <div class="row">
@@ -196,7 +221,7 @@
 	<rect x="18" y="53" width="28" height="2"/>'
             heading='Transaction log support'
             description='Write ahead transaction log ensures that data is never lost even in case of server failure. Any data received is first written to the log before indexing.'}}
-            
+
             {{> feature icon='	<path d="M33,0C19.583,0,6,2.748,6,8v48c0,5.252,13.583,8,27,8s27-2.748,27-8V8C60,2.748,46.417,0,33,0z M33,62
 		c-15.489,0-25-3.495-25-6V43.225C12.254,46.37,22.672,48,33,48s20.746-1.63,25-4.775V56C58,58.505,48.489,62,33,62z M33,46
 		c-15.489,0-25-3.495-25-6V27.225C12.254,30.37,22.672,32,33,32s20.746-1.63,25-4.775V40C58,42.505,48.489,46,33,46z M33,30
@@ -204,7 +229,7 @@
 		C17.511,14,8,10.505,8,8s9.511-6,25-6s25,3.495,25,6S48.489,14,33,14z"/>'
             heading='Sharding'
             description='Break large indices into multiple smaller shards to scale for large amont of data.'}}
-            
+
             {{> feature icon='<path d="M0,58h64V6H0V58z M2,56V16h60v40H2z M62,8v6H2V8H62z"/>
 	<path d="M32.2,42.6L34,45h-2c-3.942,0-7-4.3-7-8h-2c0,4.721,3.849,10,9,10h2l-1.8,2.4l1.7,1.2l3.1-4v-1.2l-3.1-4L32.2,42.6z"/>
 	<path d="M34,27h-2l1.8-2.4l-1.7-1.2l-3.1,4v1.2l3.1,4l1.65-1.2L32,29h2c3.942,0,7,4.3,7,8h2C43,32.279,39.151,27,34,27z"/>
@@ -213,12 +238,12 @@
 	<rect x="22" y="10" width="4" height="2"/>'
             heading='Concurrency Control'
             description='Optimistic concurrency control ensures data is updated correctly when more than one request comes in for a single document.'}}
-            
+
             {{> feature icon='<path d="M33,10V5H8V0H6v5v26v33h2V31h17v5h33.618l-6.5-13l6.5-13H33z M28.784,10L31,8.173V10H28.784z M8,29V7h21.278L25,10.528V29
 		H8z M55.382,34H27V12h28.382l-5.5,11L55.382,34z"/>'
             heading='Per field similarity & analysis support'
             description='Define search time and index analyzers for each field. Further control relevance using per field similarity.'}}
-            
+
             {{> feature icon='
             <g>
             <path d="M0,58h64V6H0V58z M2,56V16h60v40H2z M62,8v6H2V8H62z"/>
@@ -228,7 +253,7 @@
             </g>'
             heading='Web Portal'
             description='Manage most common aspects of the engine using an easy to use web portal.'}}
-            
+
             {{> feature icon='<path d="M0,58h64V6H0V58z M2,56V16h60v40H2z M62,8v6H2V8H62z"/>
 	<rect x="6" y="10" width="4" height="2"/>
 	<rect x="14" y="10" width="4" height="2"/>
@@ -237,7 +262,7 @@
 		C35.474,36.016,36,34.57,36,33z M24,33c0-2.757,2.243-5,5-5s5,2.243,5,5s-2.243,5-5,5S24,35.757,24,33z"/>'
             heading='Search Studio'
             description='View the indexed data and fine tune your queries till you get the right results.'}}
-            
+
             {{> feature icon='<path d="M41,37.586l-4.15-4.15L44.409,26H48c5.019,0,11-2.342,11-13.5v-1.573l-8.778,4.115l-3.038-3.164L51.024,3H49.5
 		C38.342,3,36,9.011,36,14v3.59l-7.442,7.554L16.414,13l3.198-3.198L7.845,2.741L4.741,5.845l7.061,11.768L15,14.414l12.154,12.154
 		L2.788,51.298l-0.178,0.18l-1.992,6.831l2.968,2.793l6.857-1.696l24.98-24.567L39.586,39l-3,3L57,62.414L64.414,55L44,34.586

@@ -1,4 +1,6 @@
 {
-  ".read": false,
-  ".write": false
+    "rules": {
+        ".read": false,
+        ".write": false
+    }
 }
