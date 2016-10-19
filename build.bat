@@ -18,4 +18,4 @@ copy ..\flexsearch\documentation\docs\data\*.* docs\_data\dynamic\
 
 echo Copying swagger spec
 copy ..\flexsearch\spec\swagger-full.json docs\_data\dynamic\swagger.json
-C:\git\Catalogue\src\Catalogue\bin\Debug\Catalogue.exe --docs docs --conf release
+Catalogue.exe --docs docs --conf release
